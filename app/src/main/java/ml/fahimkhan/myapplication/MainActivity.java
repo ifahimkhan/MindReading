@@ -4,12 +4,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     Random r = new Random();
-    int random = r.nextInt(12 - 0) + 0;
+    int random = r.nextInt(12);
     int[] images = {R.mipmap.image0, R.mipmap.image1, R.mipmap.image2, R.mipmap.image3, R.mipmap.image4, R.mipmap.image5, R.mipmap.image6
             , R.mipmap.image7, R.mipmap.image8, R.mipmap.image9, R.mipmap.image10, R.drawable.flag};
 
@@ -46,13 +48,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.listitem);
 
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(this,10);
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 7);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
-        Toast.makeText(this, "Shuffling.!!", Toast.LENGTH_SHORT).show();
-
-        myBinding();
-
 
         mAdapter = new GreenAdapter(getApplicationContext(), NUM_LIST_ITEMS, random, imagearry, booleanitemClicked);
         recyclerView.setAdapter(mAdapter);
@@ -73,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        myBinding();
     }
 
     public void nextIntent(View view) {
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         final boolean finalShow = show;
         dialog.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                startActivity(new Intent(getApplicationContext(), AnswerActivity.class).putExtra("random", random).putExtra("images", images).putExtra("position",displayedposition ).putExtra("show", finalShow));
+                startActivity(new Intent(getApplicationContext(), AnswerActivity.class).putExtra("random", random).putExtra("images", images).putExtra("position", displayedposition).putExtra("show", finalShow));
             }
         });
         dialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -99,23 +98,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void myBinding() {
+        Toast.makeText(this, "Shuffling.!!", Toast.LENGTH_SHORT).show();
+        random = r.nextInt(12);
+        booleanitemClicked.clear();
+
         for (int listIndex = 0; listIndex <= 100; listIndex++) {
             int index = listIndex % 12;
             if (listIndex < 9) {
                 Random r = new Random();
-                int random = r.nextInt(12 - 0) + 0;
+                int random = r.nextInt(12);
                 imagearry.add(listIndex, images[random]);
 
             } else if (listIndex % 9 == 0) {
-
-
                 imagearry.add(listIndex, images[random]);
-                if (listIndex == 0) {
-                    Random r = new Random();
-                    int random = r.nextInt(12 - 0) + 0;
-                    imagearry.add(listIndex, images[random]);
-                }
-
             } else {
                 imagearry.add(listIndex, images[index]);
 
@@ -124,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             booleanitemClicked.set(listIndex, false);
 
         }
+
     }
 
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@mipmap/wood">
 
     <RelativeLayout
@@ -11,7 +12,7 @@
         android:background="@color/blackTransparent">
 
         <RelativeLayout
-            android:padding="16dp"
+            android:padding="@dimen/_14sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
@@ -22,27 +23,27 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="@dimen/_16sdp"
                 android:background="@color/blackTransparent"
-                android:padding="10dp"
+                android:padding="@dimen/_8sdp"
                 android:text="Calculation"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="@dimen/_20sdp"
                 android:textStyle="bold" />
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/txt2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/blackTransparent"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="@dimen/_4sdp">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -54,22 +55,22 @@
                     android:text="\nThink of any two-digit number.\n Then add both digits together and subtract the result from the original number.\n"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
-            </android.support.v7.widget.CardView>
+                    android:textSize="@dimen/_16sdp" />
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardtxt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txt2"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 app:cardBackgroundColor="@color/blackTransparent"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="@dimen/_4sdp">
 
                 <TextView
 
@@ -78,26 +79,26 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt2"
                     android:layout_centerHorizontal="true"
-                    android:padding="15dp"
+                    android:padding="@dimen/_12sdp"
                     android:text="Example for 32 \n 3 + 2 = 5 \n 32 - 5 = 27 \n 27 Would be your number!"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
-            </android.support.v7.widget.CardView>
+                    android:textSize="@dimen/_16sdp" />
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardtxt4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cardtxt3"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
                 app:cardBackgroundColor="@color/blackTransparent"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="4dp">
+                app:cardCornerRadius="@dimen/_4sdp"
+                app:cardElevation="@dimen/_4sdp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -105,13 +106,13 @@
                     android:layout_below="@+id/txt3"
                     android:layout_alignStart="@+id/cardtxt4"
                     android:layout_centerHorizontal="true"
-                    android:padding="10dp"
+                    android:padding="@dimen/_8sdp"
                     android:text="FIND A SYMBOL \n Find the symbol that Correspond your number."
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="24sp" />
-            </android.support.v7.widget.CardView>
+                    android:textSize="@dimen/_16sdp" />
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
+</ScrollView>
