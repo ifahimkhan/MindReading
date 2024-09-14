@@ -23,7 +23,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private static final int NUM_LIST_ITEMS = 101;
-    private GreenAdapter mAdapter;
+    private QuestionAdapter mAdapter;
     private static int displayedposition = 0;
     ArrayList<Integer> imagearry = new ArrayList<Integer>();
     ArrayList<Boolean> booleanitemClicked = new ArrayList<>();
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-        mAdapter = new GreenAdapter(getApplicationContext(), NUM_LIST_ITEMS, random, imagearry, booleanitemClicked);
+        mAdapter = new QuestionAdapter(getApplicationContext(), NUM_LIST_ITEMS, random, imagearry, booleanitemClicked);
         recyclerView.setAdapter(mAdapter);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

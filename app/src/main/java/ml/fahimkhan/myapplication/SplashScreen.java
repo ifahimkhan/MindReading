@@ -31,12 +31,17 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 try {
 
-                    sleep(3000);
+                    sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    Intent intent = new Intent(SplashScreen.this, QuestionActivity.class);
-                    startActivity(intent);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(SplashScreen.this, QuestionActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
             }
         };

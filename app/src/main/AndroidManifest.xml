@@ -15,17 +15,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AnswerActivity">
+        <activity android:exported="false" android:name=".AnswerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AnswerActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:exported="false" android:name=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".QuestionActivity"></activity>
+        <activity android:exported="false" android:name=".QuestionActivity"></activity>
     </application>
 
 

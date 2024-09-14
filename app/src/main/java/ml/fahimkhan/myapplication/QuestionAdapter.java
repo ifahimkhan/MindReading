@@ -27,9 +27,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder> {
+public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.NumberViewHolder> {
 
-    private static final String TAG = GreenAdapter.class.getSimpleName();
+    private static final String TAG = QuestionAdapter.class.getSimpleName();
     private int mNumberItems, random;
     ArrayList<Integer> imagearry = new ArrayList<Integer>();
     Context mycontext, context;
@@ -38,7 +38,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     ArrayList<Boolean> booleanitemClicked = new ArrayList<>();
 
 
-    public GreenAdapter(Context context, int numberOfItems, int random, ArrayList<Integer> imagearry, ArrayList<Boolean> booleanitemClicked) {
+    public QuestionAdapter(Context context, int numberOfItems, int random, ArrayList<Integer> imagearry, ArrayList<Boolean> booleanitemClicked) {
         mNumberItems = numberOfItems;
         this.random = random;
         this.mycontext = context;
