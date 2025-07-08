@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Animation blink = AnimationUtils.loadAnimation(this, R.anim.blink);
         TextView revealAnswer = (TextView) findViewById(R.id.next);
-        revealAnswer.startAnimation(blink);
+//        revealAnswer.startAnimation(blink);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

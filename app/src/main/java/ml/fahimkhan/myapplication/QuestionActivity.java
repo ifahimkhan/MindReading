@@ -4,24 +4,30 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 public class QuestionActivity extends AppCompatActivity {
 
     CardView card1, card2, card3;
-    Animation fade1,fade2,fade3;
+    Animation fade1, fade2, fade3;
+    UpdateHelper updateHelper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        updateHelper = new UpdateHelper(this);
+        updateHelper.checkForUpdate();
+
         card1 = (CardView) findViewById(R.id.txt2);
         card2 = (CardView) findViewById(R.id.cardtxt3);
         card3 = (CardView) findViewById(R.id.cardtxt4);
@@ -73,5 +79,11 @@ public class QuestionActivity extends AppCompatActivity {
         dialog.setMessage("Did you choose your number?");
         dialog.setCancelable(true);
         dialog.show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateHelper.resumeUpdateIfInterrupted();
     }
 }

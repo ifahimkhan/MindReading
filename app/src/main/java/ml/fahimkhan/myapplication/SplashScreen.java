@@ -3,6 +3,8 @@ package ml.fahimkhan.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
+    private static final String TAG = SplashScreen.class.getName();
     ImageView img1;
     TextView name;
     Animation fadeIn,fade;
@@ -18,6 +21,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(TAG, "oncreate: ");
         setContentView(R.layout.activity_splash_screen);
         img1 = (ImageView) findViewById(R.id.img);
         name= (TextView) findViewById(R.id.textView4);
