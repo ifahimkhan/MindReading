@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="app/src/main/ic_launcher-playstore.png" width="120" alt="Mind Reader Logo"/>
+  <img src="app/src/main/playstore-icon.png" width="120" alt="Mind Reader Logo"/>
 </p>
 
 <h1 align="center">Mind Reader</h1>
