@@ -1,5 +1,6 @@
 package ml.fahimkhan.myapplication
 
+import android.app.Activity
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -20,11 +21,11 @@ class UpdateHelper(private val activity: ComponentActivity) {
         ActivityResultContracts.StartIntentSenderForResult()
     ) { result ->
         when (result.resultCode) {
-            ComponentActivity.RESULT_OK -> {
+            Activity.RESULT_OK -> {
                 Toast.makeText(activity, "App updated successfully", Toast.LENGTH_SHORT).show()
             }
 
-            ComponentActivity.RESULT_CANCELED -> {
+            Activity.RESULT_CANCELED -> {
                 Toast.makeText(activity, "Update canceled", Toast.LENGTH_SHORT).show()
             }
 
